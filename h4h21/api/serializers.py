@@ -4,9 +4,9 @@ from .models import FoodItem
 class FoodItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem
-        fields = ('location', 'time_posted', 'time_available', 'name', 'desc')
+        fields = ('poster', 'location', 'time_posted', 'time_available', 'food_name', 'food_desc')
 
 class AddFoodItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem
-        fields = ('location', 'time_available', 'name', 'desc')
+        fields = ('location', 'time_available', 'food_name', 'food_desc')
