@@ -18,6 +18,6 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-    path('test', FoodItemView.as_view()),
+    path('items', FoodItemView.as_view()),
     path('add-item', AddItemView.as_view())
 ]

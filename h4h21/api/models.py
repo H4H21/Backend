@@ -7,5 +7,6 @@ class FoodItem(models.Model):
     time_posted = models.DateTimeField(auto_now_add=True)
     time_available = models.DateTimeField(auto_now=False, auto_now_add=False)
     food_name = models.CharField(max_length=20, default="FoodItem")
+    food_category = models.CharField(max_length=50, default="Category")
     food_desc = models.CharField(max_length=50)
     
