@@ -9,4 +9,4 @@ class FoodItemSerializer(serializers.ModelSerializer):
 class AddFoodItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem
-        fields = ('location', 'time_available', 'food_name', 'food_category', 'food_desc')
+        fields = ('location', 'time_available', 'food_name', 'foodslist', 'food_category', 'food_desc')
