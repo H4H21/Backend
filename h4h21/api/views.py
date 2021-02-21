@@ -16,6 +16,12 @@ class FoodItemView(generics.ListAPIView):
     queryset = FoodItem.objects.all()
     serializer_class = FoodItemSerializer
 
+class GetItemView(APIView):
+    serializer_class = FoodItemSerializer
+
+    def get(self, request, format=None):
+        return(Response({"Get Item View" : "Not implemented yet"}, status=status.HTTP_200_OK))
+
 # Add an item to the database
 class AddItemView(APIView):
     serializer_class = AddFoodItemSerializer
