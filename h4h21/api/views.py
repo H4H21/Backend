@@ -30,9 +30,10 @@ class AddItemView(APIView):
             location = serializer.data.get('location')
             time_available = serializer.data.get('time_available')
             food_name = serializer.data.get('food_name')
+            food_cat = serializer.data.get('food_category')
             food_desc = serializer.data.get('food_desc')
 
-            item = FoodItem(poster=poster, location=location, time_available = time_available, food_name = food_name, food_desc=food_desc)
+            item = FoodItem(poster=poster, location=location, time_available = time_available, food_name = food_name, food_category = food_cat, food_desc=food_desc)
             item.save()
             return Response(FoodItemSerializer(item).data, status=status.HTTP_201_CREATED)
         return Response({"Bad Request" : "Invalid data"}, status=status.HTTP_400_BAD_REQUEST)
