@@ -20,5 +20,6 @@ from .views import *
 urlpatterns = [
     path('items', FoodItemView.as_view()),
     path('add-item', AddItemView.as_view()),
-    path('get-user-items', GetItemView.as_view())
+    path('get-user-items', GetItemView.as_view()),
+    path('get-items-within-dist', GetItemsWithinDist.as_view())
 ]
