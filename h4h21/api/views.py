@@ -99,3 +99,17 @@ class AddItemView(APIView):
             item.save()
             return Response(FoodItemSerializer(item).data, status=status.HTTP_201_CREATED)
         return Response({"Bad Request" : "Invalid data"}, status=status.HTTP_400_BAD_REQUEST)
+
+class RemoveItemView(APIView):
+
+    def post(self, request, format=None):
+        if not self.request.session.exists(self.request.session.session_key):
+            self.request.session.create()
+        
+        host = self.request.session.session_key
+        posting = FoodItem.objects.filter(poster=host)
+        if len(posting) > 0:
+            item = posting[0]
+            item.delete()
+            return Response({"Message" : "Success, deleted"}, status=status.HTTP_200_OK)
+        return Response({"Message" : "Failed to find item to delete"}, status=status.HTTP_400_BAD_REQUEST)
