@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'h4h21.wsgi.application'
+WSGI_APPLICATION = 'h4h21.wsgi.application'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
