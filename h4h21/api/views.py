@@ -41,13 +41,13 @@ def getDonorLoc(address):
 
 def calcDist(r_lat, r_long, d_lat, d_long):
     print(r_lat, r_long, d_lat, d_long)
-    return haversine((r_lat, -r_long), (d_lat, d_long), unit="mi")
+    return haversine((r_lat, r_long), (d_lat, d_long), unit="mi")
 
 class GetItemsWithinDist(APIView):
     serializer_class = FoodItemSerializer
 
     def post(self, request, format=None):
-        serializer = FoodItemSerializer(request.data)
+        #serializer = FoodItemSerializer(request.data)
         recipient_lat = request.data.get('lat')
         recipient_long = request.data.get('lng')
         limit = request.data.get('dist')
