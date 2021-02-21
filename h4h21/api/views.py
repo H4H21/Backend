@@ -37,6 +37,8 @@ class AddItemView(APIView):
             time_available_start = serializer.data.get('time_available_start')
             time_available_end = serializer.data.get('time_available_end')
             food_cat = serializer.data.get('food_category')
+            if food_cat is None:
+                food_cat = ['Other']
             food_desc = serializer.data.get('food_desc')
 
             item = FoodItem(poster=poster, location=location, time_available_start = time_available_start, time_available_end = time_available_end, food_category = food_cat, food_desc=food_desc)
